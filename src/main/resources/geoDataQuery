@@ -1,0 +1,19 @@
+/*
+This is an example Overpass query.
+Try it out by pressing the Run button above!
+You can find more examples with the Load tool.
+*/
+node
+  ["highway" ~ "motorway|trunk|primary|secondary|tertiary|unclassified|residential|service|motorway_link|trunk_link|primary_link|secondary_link|tertiary_link|living_street|crossing|give_way|mini_roundabout|motorway_junction|stop|passing_place|traffic_signals|turning_circle|toll_gantry|speed_camera" ]
+   (49.990333, 19.786401,50.111194, 20.094552);
+
+
+/*added by auto repair*/
+/*end of auto repair*/
+/*added by auto repair*/
+
+/*end of auto repair*/
+/*added by auto repair*/
+(._;>;);
+/*end of auto repair*/
+out body;
