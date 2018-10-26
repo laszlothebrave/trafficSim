@@ -15,11 +15,11 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-public class Path {
-    public Path(){
+class Path {
+    Path(){
         GraphHopper hopper = new GraphHopperOSM().forServer();
         String osmFile;
-        hopper.setDataReaderFile("C:\\Users\\laszlothebrave\\IdeaProjects\\trafficSim\\src\\main\\resources\\export.geojson");
+        hopper.setDataReaderFile("C:\\Users\\laszlothebrave\\IdeaProjects\\trafficSim\\src\\main\\resources\\osmRAW.osm");
         // where to store graphhopper files?
 
         hopper.setGraphHopperLocation("C:\\Users\\laszlothebrave\\IdeaProjects\\trafficSim\\src\\main\\resources\\temp");
@@ -30,14 +30,14 @@ public class Path {
         hopper.importOrLoad();
 
 // simple configuration of the request object, see the GraphHopperServlet classs for more possibilities.
-        GHRequest req = new GHRequest(49.990333, 19.786401,50.111194, 20.094552).
+        GHRequest req = new GHRequest(50.0820701, 20.0325677,50.0917697, 19.8276063).
                 setWeighting("fastest").
                 setVehicle("car").
                 setLocale(Locale.US);
         GHResponse rsp = hopper.route(req);
 
 // first check for errors
-        if(rsp.hasErrors()) {
+       if(rsp.hasErrors()) {
             // handle them!
             // rsp.getErrors()
             return;
@@ -63,5 +63,8 @@ public class Path {
 
 // or get the result as gpx entries:
         List<GPXEntry> list = il.createGPXList();
+        System.out.println(iList);
+
+
     }
 }
